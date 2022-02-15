@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         boolean per = isPermissionGranted();
 
         if(updateButton){
-            favBtn.setText("Update Button");
+            favBtn.setText("Update Place");
         }else{
             favBtn.setText("Go to Favorite Places");
         }
