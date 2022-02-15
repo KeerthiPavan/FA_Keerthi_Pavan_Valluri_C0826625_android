@@ -155,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onMapLongClick(LatLng latLng) {
                 mGoogleMap.clear();
-
                 try {
                     if (geo == null){
                         geo = new Geocoder(MainActivity.this, Locale.getDefault());
@@ -164,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     if (address.size() > 0) {
                         mGoogleMap.addMarker(new MarkerOptions().position(latLng).title("Address:" + address.get(0).getAddressLine(0)));
+                        markerText.setText(address.get(0).getFeatureName() + ", " + address.get(0).getLocality() +", " + address.get(0).getAdminArea() + ", " + address.get(0).getCountryName());
+
                     }
                 }
                 catch (IOException ex) {
